@@ -1,0 +1,132 @@
+[
+  {
+    "domain": "google.com",
+    "http_status": 200,
+    "http_server": "gws",
+    "http_content_length": 18865,
+    "http_content_language": [],
+    "http_cookies": [
+      "__Secure-STRP",
+      "AEC",
+      "NID"
+    ],
+    "https_status": "Ok",
+    "https_server": "gws",
+    "https_content_length": 18910,
+    "https_content_language": [],
+    "https_cookies": [
+      "__Secure-STRP",
+      "NID"
+    ]
+  },
+  {
+    "domain": "microsoft.com",
+    "http_status": 200,
+    "http_server": null,
+    "http_content_length": 156743,
+    "http_content_language": [],
+    "http_cookies": [
+      "bStore",
+      "CAS_PROGRAM"
+    ],
+    "https_status": "Ok",
+    "https_server": null,
+    "https_content_length": 156743,
+    "https_content_language": [],
+    "https_cookies": [
+      "bStore",
+      "CAS_PROGRAM"
+    ]
+  },
+  {
+    "domain": "www.google.com",
+    "http_status": 200,
+    "http_server": "gws",
+    "http_content_length": 18872,
+    "http_content_language": [],
+    "http_cookies": [
+      "__Secure-STRP",
+      "AEC",
+      "NID"
+    ],
+    "https_status": "Ok",
+    "https_server": "gws",
+    "https_content_length": 18958,
+    "https_content_language": [],
+    "https_cookies": [
+      "__Secure-STRP",
+      "NID",
+      "__Secure-BUCKET"
+    ]
+  },
+  {
+    "domain": "data.microsoft.com",
+    "http_status": null,
+    "http_server": null,
+    "http_content_length": null,
+    "http_content_language": [],
+    "http_cookies": [],
+    "https_status": "Cannot connect to host data.microsoft.com:443 ssl:default [getaddrinfo failed]",
+    "https_server": null,
+    "https_content_length": null,
+    "https_content_language": [],
+    "https_cookies": []
+  },
+  {
+    "domain": "events.data.microsoft.com",
+    "http_status": null,
+    "http_server": null,
+    "http_content_length": null,
+    "http_content_language": [],
+    "http_cookies": [],
+    "https_status": "Ok",
+    "https_server": "Microsoft-HTTPAPI/2.0",
+    "https_content_length": 0,
+    "https_content_language": [],
+    "https_cookies": []
+  },
+  {
+    "domain": "office.com",
+    "http_status": 200,
+    "http_server": null,
+    "http_content_length": 278796,
+    "http_content_language": [],
+    "http_cookies": [
+      "OH.SID",
+      "OH.FLID"
+    ],
+    "https_status": "Ok",
+    "https_server": null,
+    "https_content_length": 278796,
+    "https_content_language": [],
+    "https_cookies": []
+  },
+  {
+    "domain": "apple.com",
+    "http_status": 200,
+    "http_server": "Apple",
+    "http_content_length": 126924,
+    "http_content_language": [],
+    "http_cookies": [
+      "geo"
+    ],
+    "https_status": "Ok",
+    "https_server": "Apple",
+    "https_content_length": 126924,
+    "https_content_language": [],
+    "https_cookies": []
+  },
+  {
+    "domain": "live.com",
+    "http_status": 200,
+    "http_server": "Microsoft-HTTPAPI/2.0",
+    "http_content_length": 13691,
+    "http_content_language": [],
+    "http_cookies": [],
+    "https_status": "Ok",
+    "https_server": "Microsoft-HTTPAPI/2.0",
+    "https_content_length": 13691,
+    "https_content_language": [],
+    "https_cookies": []
+  }
+]
