@@ -47,7 +47,7 @@ async def fetch(session, url):
         }
 
 
-async def check_domain(session, domain, sem):
+async def check_domain(session, domain):
     result = {
         "domain": domain,
 
@@ -64,22 +64,21 @@ async def check_domain(session, domain, sem):
         "https_cookies": []
     }
 
-    async with sem:
-        http = await fetch(session, f"http://{domain}")
+    http = await fetch(session, f"http://{domain}")
 
-        result["http_status"] = http["status"]
-        result["http_server"] = http["server"]
-        result["http_content_length"] = http["length"]
-        result["http_content_language"] = http["language"]
-        result["http_cookies"] = http["cookies"]
+    result["http_status"] = http["status"]
+    result["http_server"] = http["server"]
+    result["http_content_length"] = http["length"]
+    result["http_content_language"] = http["language"]
+    result["http_cookies"] = http["cookies"]
 
-        https = await fetch(session, f"https://{domain}")
+    https = await fetch(session, f"https://{domain}")
 
-        result["https_status"] = "Ok" if not https["error"] else https["error"]
-        result["https_server"] = https["server"]
-        result["https_content_length"] = https["length"]
-        result["https_content_language"] = https["language"]
-        result["https_cookies"] = https["cookies"]
+    result["https_status"] = "Ok" if not https["error"] else https["error"]
+    result["https_server"] = https["server"]
+    result["https_content_length"] = https["length"]
+    result["https_content_language"] = https["language"]
+    result["https_cookies"] = https["cookies"]
 
     return result
 
@@ -87,9 +86,7 @@ async def check_domain(session, domain, sem):
 async def main():
     domains = read_csv(INPUT_CSV)
 
-    sem = asyncio.Semaphore(MAX_CONNECTIONS)
-
-    connector = aiohttp.TCPConnector(limit=MAX_CONNECTIONS, ssl=False)
+    connector = aiohttp.TCPConnector(limit=MAX_CONNECTIONS)
 
     async with aiohttp.ClientSession(
         headers={ "Accept-Language": "ru-RU" },
@@ -98,7 +95,7 @@ async def main():
 
         tasks = []
         for domain in domains:
-            tasks.append(check_domain(session, domain, sem))
+            tasks.append(check_domain(session, domain))
 
         results = await asyncio.gather(*tasks)
 
